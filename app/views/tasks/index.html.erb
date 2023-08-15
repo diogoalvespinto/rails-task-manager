@@ -1,2 +1,15 @@
-<hi>hi from the index</hi>
+<h1>My tasks</h1>
+<ul>
+  <% @tasks.each do |task| %>
+    <li>
+      <h3>
+        <%= link_to task.title, task_path(task) %>
+      </h3>
+      <p><%= task.details %></p>
+      <p>Completed? <%= task.completed %></p>
 
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Create new task", tasks_new_path %>
